@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Utiliza el puerto proporcionado por Heroku o el 3000 si no está definido
+const PORT = process.env.PORT || 3000; // Utiliza el puerto proporcionado o el 3000 si no está definido
 // Listen on the port:
 app.listen(PORT, () => console.log('Listening on', PORT));
 
