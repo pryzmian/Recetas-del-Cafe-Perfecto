@@ -62,7 +62,7 @@ var geminissecure = `
 var impostor = `Doname un cafe buena persona ☕ `
 
 function mostrarMensaje() {
-  console.clear();
+  //console.clear();
   console.log('%c' + geminissecure, estiloGeminis);
   console.log('%c' + impostor, estiloConsola);
   //console.log("%cSTOP!", "color:red;font-size:xx-large;font-weight:bold;"),
