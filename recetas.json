@@ -1,0 +1,83 @@
+{
+  "recetas": [
+    {
+      "nombre": "Café con Leche",
+      "descripcion": "Una clásica y reconfortante bebida que combina la intensidad del café con la suavidad de la leche. Perfecta para empezar el día o para disfrutar en cualquier momento.",
+      "ingredientes": [
+        "café",
+        "leche"
+      ],
+      "instrucciones": [
+        "Prepara un café.",
+        "Calienta la leche y añádela al café caliente."
+      ]
+    },
+    {
+      "nombre": "Espresso",
+      "descripcion": "Una explosión de sabor concentrado en una pequeña taza. El espresso es la base de muchas otras bebidas de café y es apreciado por su intensidad y aroma.",
+      "ingredientes": [
+        "café"
+      ],
+      "instrucciones": [
+        "Prepara un espresso."
+      ]
+    },
+    {
+      "nombre": "Capuchino",
+      "descripcion": "Una mezcla equilibrada de espresso, leche vaporizada y espuma de leche, que resulta en una bebida suave y cremosa con un toque de amargor.",
+      "ingredientes": [
+        "café",
+        "leche",
+        "espuma de leche"
+      ],
+      "instrucciones": [
+        "Prepara un espresso.",
+        "Calienta la leche y añádela al espresso.",
+        "Añade espuma de leche por encima."
+      ]
+    },
+    {
+      "nombre": "Americano",
+      "descripcion": "Una opción más suave pero llena de sabor, el Americano combina espresso con agua caliente para obtener una bebida equilibrada y satisfactoria.",
+      "ingredientes": [
+        "café espresso",
+        "agua caliente"
+      ],
+      "instrucciones": [
+        "Prepara un espresso.",
+        "Agrega agua caliente al espresso según tu preferencia de fuerza."
+      ]
+    },
+    {
+      "nombre": "Latte",
+      "descripcion": "Una bebida cremosa y reconfortante que combina espresso con leche vaporizada, ideal para aquellos que prefieren una opción más suave y dulce.",
+      "ingredientes": [
+        "café espresso",
+        "leche vaporizada"
+      ],
+      "instrucciones": [
+        "Prepara un espresso.",
+        "Vaporiza la leche hasta que esté espumosa y caliente.",
+        "Vierte el espresso en una taza y agrega la leche vaporizada."
+      ]
+    },
+    {
+      "nombre": "Frappe",
+      "descripcion": "Una deliciosa y refrescante bebida de café frío, perfecta para los días calurosos. El Frappe combina espresso con hielo, leche y azúcar, coronado con una capa de crema batida.",
+      "ingredientes": [
+        "café espresso",
+        "hielo",
+        "leche",
+        "azúcar (opcional)",
+        "crema batida (opcional)"
+      ],
+      "instrucciones": [
+        "Prepara un espresso.",
+        "Deja que el espresso se enfríe.",
+        "En una licuadora, mezcla el espresso frío con hielo, leche y azúcar al gusto.",
+        "Licua hasta obtener una consistencia suave y cremosa.",
+        "Sirve en un vaso alto y decora con crema batida si lo deseas."
+      ]
+    }
+  ]
+}
