@@ -1,6 +1,6 @@
 function buscarReceta() {
   const cafe = document.getElementById("cafe").value;
-  fetch(`/api/recetas?cafe=${encodeURIComponent(cafe)}`)
+  fetch(`/recetas?cafe=${encodeURIComponent(cafe)}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Receta no encontrada");
@@ -17,7 +17,7 @@ function buscarReceta() {
 
 function buscarEnTiempoReal() {
   const busqueda = document.getElementById("busqueda").value;
-  fetch(`/api/recetas?cafe=${encodeURIComponent(busqueda)}`)
+  fetch(`/recetas?cafe=${encodeURIComponent(busqueda)}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Receta no encontrada");
@@ -68,7 +68,7 @@ function agregarReceta() {
     instrucciones: instrucciones.split("\n").map((item) => item.trim()),
   };
 
-  fetch("/api/agregar-receta", {
+  fetch("/agregar-receta", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
