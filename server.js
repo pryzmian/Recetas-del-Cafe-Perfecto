@@ -6,6 +6,20 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Middleware para manejar errores globalmente
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Algo salió mal!');
+});
+
+// Middleware para soporte CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 app.get('/recetas', (req, res) => {
     const { cafe } = req.query;
     fs.readFile('recetas.json', 'utf8', (err, data) => {
