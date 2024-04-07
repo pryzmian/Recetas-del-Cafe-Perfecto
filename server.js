@@ -3,32 +3,25 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 
-// Middleware para manejar errores globalmente
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Algo salió mal!');
-});
-
-// Middleware para soporte CORS
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
-
 app.get('/recetas', (req, res) => {
-    const { cafe } = req.query;
+    const { cafe, busqueda } = req.query;
     fs.readFile('recetas.json', 'utf8', (err, data) => {
         if (err) {
             res.status(500).send('Error al leer el archivo de recetas');
             return;
         }
         const recetas = JSON.parse(data).recetas;
-        const recetaEncontrada = recetas.find(item => item.nombre.toLowerCase() === cafe.toLowerCase());
+        let recetaEncontrada;
+        if (cafe) {
+            recetaEncontrada = recetas.find(item => item.nombre.toLowerCase() === cafe.toLowerCase());
+        } else if (busqueda) {
+            recetaEncontrada = recetas.filter(item => item.nombre.toLowerCase().includes(busqueda.toLowerCase()));
+        }
         if (recetaEncontrada) {
             res.json(recetaEncontrada);
         } else {
@@ -56,4 +49,6 @@ app.post('/agregar-receta', (req, res) => {
     });
 });
 
-module.exports = app;
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
